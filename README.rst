@@ -16,6 +16,8 @@ VIM dành cho lập trình Javascript, React navitve, css, html. :four_leaf_clov
   sudo apt-get install curl python-software-properties
   curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
   sudo apt-get install nodejs
+  npm i -g yarn
+  yarn global add prettier
 
 -----------------
 
