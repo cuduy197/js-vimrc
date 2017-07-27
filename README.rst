@@ -1,20 +1,21 @@
 =============
-Javascript .VIMRC
+Javascript .VIMRC :star2:
 =============
 
-VIM dành cho lập trình Javascript, React navitve, css, html.
+VIM dành cho lập trình Javascript, React navitve, css, html. :four_leaf_clover:
 
 
-Yêu cầu
+  Yêu cầu  :warning:
 ------------
 
 - VIM 7.4
 - git
 - bash 3.2+
+- đã test trên ubuntu 16.04 :+1:
 
 -----------------
 
-:star: Cài đặt
+  Cài đặt  :bulb:
 
 Nhập mã vào terminal:
 
