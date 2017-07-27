@@ -11,11 +11,15 @@ VIM dành cho lập trình Javascript, React navitve, css, html. :four_leaf_clov
 - VIM 7.4
 - git
 - bash 3.2+
-- đã test trên ubuntu 16.04 :+1:
+- nodejs > 6.0 
 
 -----------------
+  sudo apt-get install curl python-software-properties
+  curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
+  sudo apt-get install nodejs
+-----------------
 
-  Cài đặt  :bulb:
+Cài đặt  :bulb:
 
 Nhập mã vào terminal:
 
@@ -27,5 +31,4 @@ Sau đó đợi đến khi vim cài đặt xong các plugin!
 
 # VIM diệt sạch vi khuẩn :zap: 
 
-.. image:: https://github.com/ets-labs/python-vimrc/wiki/img/screenshot.png
 
