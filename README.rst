@@ -14,10 +14,7 @@ Yêu cầu
 
 -----------------
 
-.. image:: https://github.com/ets-labs/python-vimrc/wiki/img/screenshot.png
-
-Cài đặt
-------------
+:star: Cài đặt
 
 Nhập mã vào terminal:
 
@@ -28,3 +25,6 @@ Nhập mã vào terminal:
 Sau đó đợi đến khi vim cài đặt xong các plugin!
 
 # VIM diệt sạch vi khuẩn :zap: 
+
+.. image:: https://github.com/ets-labs/python-vimrc/wiki/img/screenshot.png
+
