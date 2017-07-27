@@ -3,4 +3,4 @@ red="\033[31;1;7m"
 yellow="\033[33;1;7m"
 end='\033[0m'
 
-printf "${green} Test ok ${end}"
+printf "${green} Test done! ${end}"
