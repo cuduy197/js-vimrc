@@ -6,27 +6,25 @@ wrapper() {
   BLUE="\033[0;36m"
   NORMAL="\033[0m"
 
-  REPO_HTTPS="https://github.com/ets-labs/python-vimrc.git"
+  REPO_HTTPS="https://github.com/cuduy197/js-vimrc.git"
   VUNDLE_HTTPS="https://github.com/VundleVim/Vundle.vim.git"
 
 echo "${BLUE}"
 cat << "HELLO_TEXT"
-                          iiii
-                         i::::i
-                          iiii
-
-vvvvvvv           vvvvvvviiiiiii    mmmmmmm    mmmmmmm   rrrrr   rrrrrrrrr       cccccccccccccccc
- v:::::v         v:::::v i:::::i  mm:::::::m  m:::::::mm r::::rrr:::::::::r    cc:::::::::::::::c
-  v:::::v       v:::::v   i::::i m::::::::::mm::::::::::mr:::::::::::::::::r  c:::::::::::::::::c
-   v:::::v     v:::::v    i::::i m::::::::::::::::::::::mrr::::::rrrrr::::::rc:::::::cccccc:::::c
-    v:::::v   v:::::v     i::::i m:::::mmm::::::mmm:::::m r:::::r     r:::::rc::::::c     ccccccc
-     v:::::v v:::::v      i::::i m::::m   m::::m   m::::m r:::::r     rrrrrrrc:::::c
-      v:::::v:::::v       i::::i m::::m   m::::m   m::::m r:::::r            c:::::c
-       v:::::::::v        i::::i m::::m   m::::m   m::::m r:::::r            c::::::c     ccccccc
-        v:::::::v        i::::::im::::m   m::::m   m::::m r:::::r            c:::::::cccccc:::::c
-         v:::::v         i::::::im::::m   m::::m   m::::m r:::::r             c:::::::::::::::::c
-          v:::v          i::::::im::::m   m::::m   m::::m r:::::r              cc:::::::::::::::c
-           vvv           iiiiiiiimmmmmm   mmmmmm   mmmmmm rrrrrrr                cccccccccccccccc
+       __       _______.     ____    ____  __  .___  ___.                   
+      |  |     /       |     \   \  /   / |  | |   \/   |                   
+      |  |    |   (----` _____\   \/   /  |  | |  \  /  |                   
+.--.  |  |     \   \    |______\      /   |  | |  |\/|  |                   
+|  `--'  | .----)   |           \    /    |  | |  |  |  |                   
+ \______/  |_______/             \__/     |__| |__|  |__|                   
+                                                                            
+  ______  __    __   _______   __    __  ____    ____  __    ___    ______  
+ /      ||  |  |  | |       \ |  |  |  | \   \  /   / /_ |  / _ \  |____  | 
+|  ,----'|  |  |  | |  .--.  ||  |  |  |  \   \/   /   | | | (_) |     / /  
+|  |     |  |  |  | |  |  |  ||  |  |  |   \_    _/    | |  \__, |    / /   
+|  `----.|  `--'  | |  '--'  ||  `--'  |     |  |      | |    / /    / /    
+ \______| \______/  |_______/  \______/      |__|      |_|   /_/    /_/     
+                                                                             
 HELLO_TEXT
 echo "${NORMAL}"
 
@@ -35,8 +33,8 @@ echo "${NORMAL}"
   fi
 
   if [ -d "$VIM" ]; then
-    printf "${YELLOW}%s${NORMAL}\n" "You already have $VIM directory."
-    printf "${YELLOW}%s${NORMAL}\n" "You have to remove $VIM if you want to re-install."
+    printf "${YELLOW}%s${NORMAL}\n" "Bạn chưa tạo thư mục $VIM ."
+    printf "${YELLOW}%s${NORMAL}\n" "Xóa thư mục $VIM khi cài đặt lại."
     exit 0
   fi
 
@@ -47,30 +45,30 @@ echo "${NORMAL}"
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
-  printf "${BLUE}%s${NORMAL}\n" "Cloning vimrc from ${REPO_HTTPS}"
+  printf "${BLUE}%s${NORMAL}\n" "Sao chép vimrc từ repo:  ${REPO_HTTPS}"
 
   hash git >/dev/null 2>&1 || {
-    printf "${RED}%s${NORMAL}\n" "Error: git is not installed."
+    printf "${RED}%s${NORMAL}\n" "Error: git chưa được cài đặt"
     exit 1
   }
 
   env git clone --depth=1 $REPO_HTTPS $VIM || {
-    printf "${RED}%s${NORMAL}\n" "Error: git clone of vimrc repo failed."
+    printf "${RED}%s${NORMAL}\n" "Lỗi khi clone repo!."
     exit 1
   }
 
-  printf "${BLUE}%s${NORMAL}\n" "Looking for an existing vim config..."
+  printf "${BLUE}%s${NORMAL}\n" "Tìm kiếm file cấu hình vim ..."
   if [ -f ~/.vimrc ] || [ -h ~/.vimrc ]; then
-    printf "${YELLOW}%s${NORMAL}\n" "Found ~/.vimrc."
-    printf "${BLUE}%s${NORMAL}\n" "You will see your old ~/.vimrc as $VIM/vimrc.bak"
+    printf "${YELLOW}%s${NORMAL}\n" "Tìm thấy ~/.vimrc."
+    printf "${BLUE}%s${NORMAL}\n" "Sao lưu ~/.vimrc thành $VIM/vimrc.bak"
     mv ~/.vimrc $VIM/vimrc.bak
   fi
 
-  printf "${BLUE}%s${NORMAL}\n" "Symlinking $VIM/vimrc with ~/.vimrc..."
+  printf "${BLUE}%s${NORMAL}\n" "Tạo lối tắt $VIM/vimrc địa chỉ ~/.vimrc..."
   ln -fs $VIM/vimrc ~/.vimrc
 
   if [ ! -d "$VIM/bundle/Vundle.vim" ]; then
-      printf "${BLUE}%s${NORMAL}\n" "Installing Vundle..."
+      printf "${BLUE}%s${NORMAL}\n" "Yahoooo! cài đặt Vundle..."
       env git clone --depth=1 $VUNDLE_HTTPS "$VIM/bundle/Vundle.vim"
   fi
 
@@ -81,9 +79,9 @@ echo "${NORMAL}"
       wget 'http://www.vim.org/scripts/download_script.php?src_id=13400' -O $VIM/colors/wombat256mod.vim
   fi
 
-  printf "${GREEN}%s${NORMAL}\n" "Vimrc has been configured ;)"
-  printf "${YELLOW}%s${NORMAL}\n" "Do not worry about error messages. When it occurs just press enter and wait till all plugins are installed."
-  printf "${BLUE}%s${NORMAL}\n" "Keep calm and use VIM!"
+  printf "${GREEN}%s${NORMAL}\n" "Vimrc đã được cấu hình ;)"
+  printf "${YELLOW}%s${NORMAL}\n" "Hãy đợi vim cài đặt các plugin sau đó , khởi động lại vim ."
+  printf "${BLUE}%s${NORMAL}\n" "Chúc bạn 1 ngày tốt lành :D "
 }
 
 wrapper
