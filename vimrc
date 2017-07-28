@@ -18,8 +18,8 @@ set encoding=utf-8
 set fileencodings=utf-8
 set wm=2
 set tw=79
-silent! TroublesomeCommand
-
+syntax on
+set number
 "=====================================================
 "" Vundle settings
 "=====================================================
@@ -29,30 +29,25 @@ call vundle#begin()
 
 		Plugin 'VundleVim/Vundle.vim'
 
-		Plugin 'Valloric/YouCompleteMe'
-
+		" Plugin 'Valloric/YouCompleteMe'
+		
+		" Ui
 		Plugin 'scrooloose/nerdtree'
 		Plugin 'jistr/vim-nerdtree-tabs'
-
 		Plugin 'bling/vim-airline'
-
 		Plugin 'mattn/emmet-vim'
-
 		Plugin 'airblade/vim-gitgutter'
 		Plugin 'xuyuanp/nerdtree-git-plugin'
-
-
 		Plugin 'jiangmiao/auto-pairs'
-
 		Plugin 'chrisbra/colorizer'
-
+		
+		" Other file type 
 		Plugin 'digitaltoad/vim-jade'
 		Plugin 'posva/vim-vue'
-
 		Plugin 'ekalinin/dockerfile.vim'
-
 		Plugin 'mustache/vim-mustache-handlebars'	
 		" Javascript
+		
 		Plugin 'pangloss/vim-javascript'
 		" Plugin 'millermedeiros/vim-esformatter'
 		Plugin 'mitermayer/vim-prettier'
@@ -73,14 +68,12 @@ let g:ycm_add_preview_to_completeopt = 1
 
 
 "Insert map 
+" Exit in insert mode
 inoremap jk <Esc>
-
 inoremap <F2> <C-R>=undo<CR>
 
 
 autocmd vimenter * NERDTree
-
-autocmd vimenter * wincmd h
 
 " Stick needtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -145,6 +138,3 @@ map <C-s> :w<CR>
 map <C-z> :undo<CR>
 map <C-r> :redo<CR>
 map <C-q> :q<CR>
-
-syntax on
-set number
