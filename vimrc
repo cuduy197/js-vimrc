@@ -18,7 +18,6 @@ set encoding=utf-8
 set fileencodings=utf-8
 set wm=2
 set tw=79
-syntax on
 set number
 "=====================================================
 "" Vundle settings
@@ -61,6 +60,8 @@ call vundle#end()                           " required
 "=====================================================
 "" General settings
 "=====================================================
+
+syntax on
 
 " Disable preview
 let g:ycm_autoclose_preview_window_after_insertion = 1
