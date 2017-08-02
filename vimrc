@@ -45,7 +45,8 @@ call vundle#begin()
 		Plugin 'digitaltoad/vim-jade'
 		Plugin 'posva/vim-vue'
 		Plugin 'ekalinin/dockerfile.vim'
-		Plugin 'mustache/vim-mustache-handlebars'	
+		Plugin 'mustache/vim-mustache-handlebars'
+		Plugin 'evanmiller/nginx-vim-syntax'
 		" Javascript
 		
 		Plugin 'pangloss/vim-javascript'
